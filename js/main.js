@@ -1,47 +1,26 @@
-const roles = [
-  "BCA Student",
-  "Developer",
-  "Tool Builder"
-];
+// Typing animation
+const roles = ["BCA Student", "Developer", "Tool Builder"];
+let i = 0, j = 0, del = false;
+const el = document.getElementById("typing");
 
-let roleIndex = 0;
-let charIndex = 0;
-let typingElement = document.getElementById("typing");
+function type() {
+  el.textContent = roles[i].slice(0, j);
+  if (!del) j++; else j--;
 
-function typeEffect() {
-  if (charIndex < roles[roleIndex].length) {
-    typingElement.textContent += roles[roleIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(typeEffect, 100);
-  } else {
-    setTimeout(eraseEffect, 1500);
-  }
+  if (j === roles[i].length + 1) del = true;
+  if (j === 0) { del = false; i = (i + 1) % roles.length; }
+
+  setTimeout(type, del ? 60 : 120);
 }
+type();
 
-function eraseEffect() {
-  if (charIndex > 0) {
-    typingElement.textContent =
-      roles[roleIndex].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(eraseEffect, 60);
-  } else {
-    roleIndex = (roleIndex + 1) % roles.length;
-    setTimeout(typeEffect, 300);
-  }
-}
-
-typeEffect();// JavaScript will be added step by step
+// Scroll reveal
 const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
-  reveals.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < windowHeight - 100) {
-      section.classList.add("active");
-    }
+function reveal() {
+  reveals.forEach(r => {
+    if (r.getBoundingClientRect().top < window.innerHeight - 100)
+      r.classList.add("active");
   });
 }
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+window.addEventListener("scroll", reveal);
+reveal();
