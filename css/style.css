@@ -98,3 +98,13 @@ section {
   text-shadow:
     0 0 8px rgba(56, 189, 248, 0.7);
 }
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
