@@ -39,3 +39,10 @@ section {
   text-decoration: none;
   display: inline-block;
 }
+#home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
