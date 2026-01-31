@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IP Info Tool</title>
+<meta name="viewport" content="width=device-width">
+</head>
+<body style="background:#020617;color:white;font-family:Arial;text-align:center;padding:50px">
+
+<h2>IP Info Tool</h2>
+<button onclick="getIP()">Get My IP Info</button>
+<pre id="out"></pre>
+
+<script>
+async function getIP(){
+  const res=await fetch("https://ipapi.co/json/");
+  const data=await res.json();
+  document.getElementById("out").textContent=
+    JSON.stringify(data,null,2);
+}
+</script>
+</body>
+</html>
