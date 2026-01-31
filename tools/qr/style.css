@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(2, 6, 23, 0.8);
+  padding: 30px;
+  width: 320px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(56,189,248,0.2);
+  box-shadow: 0 0 30px rgba(56,189,248,0.2);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg,#38bdf8,#0ea5e9);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#qrBox {
+  margin-top: 20px;
+}
