@@ -46,3 +46,22 @@ section {
   justify-content: center;
   align-items: center;
 }
+.tool-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.tool {
+  background: #020617;
+  padding: 20px;
+  border-radius: 8px;
+  width: 220px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tool:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+}
