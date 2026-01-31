@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Instagram Profile Finder</title>
+<meta name="viewport" content="width=device-width">
+</head>
+<body style="background:#020617;color:white;font-family:Arial;text-align:center;padding:50px">
+
+<h2>Instagram Profile Finder</h2>
+<input id="u" placeholder="username">
+<br><br>
+<button onclick="go()">Open Profile</button>
+
+<script>
+function go(){
+  const u=document.getElementById("u").value;
+  if(!u) return alert("Enter username");
+  window.open("https://instagram.com/"+u,"_blank");
+}
+</script>
+</body>
+</html>
